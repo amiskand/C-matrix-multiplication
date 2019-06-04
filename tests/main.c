@@ -15,9 +15,9 @@ The second is sparse matrices.
 int main(){
 
   //initializations
-  char i = 2; //row index for matrix a and c
-  char k = 3; //another index for matrix a and b
-  char j = 4; //column index for matrix b and c
+  unsigned char i = 2; //row index for matrix a and c
+  unsigned char k = 3; //another index for matrix a and b
+  unsigned char j = 4; //column index for matrix b and c
 
   char a[i][k];   //first matrix 
   char b[k][j];   //second matrix
@@ -32,14 +32,18 @@ int main(){
 
     
     a[i][k] = rand();
+
     printf("a(%d,%d):%c ", i,k,a[i][k]);  //display first matrix
+
     b[k][j] = rand();
+
     printf("b(%d,%d):%c ", k,j,c[k][j]);  //display second matrix
+
 
 //multiply then add the result to the previous result     
     c[i][j];
 
-  printf("c(%d,%d):%c ", i,j,c[i][j]);  //display results
+    printf("c(%d,%d):%c ", i,j,c[i][j]);  //display results
 
   }
 
@@ -52,8 +56,6 @@ int main(){
 
 
   end = timing(1);   //end timing
-
-
 
   printf("time it took %ld s\n", end - start);  //displaying length of time the program took to run
 

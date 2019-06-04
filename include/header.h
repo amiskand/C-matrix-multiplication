@@ -7,8 +7,9 @@
 #include <time.h>
 #include <stdlib.h>
 
-int timing(bool var);
+
+long int timing(bool var);
 //char[][] sparseMtrxMult();
-char* mtrxMult(char a,char b, char i, char k, char j);
+//char* mtrxMult(char a,char b, char i, char k, char j);
 
 #endif
