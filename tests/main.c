@@ -2,6 +2,8 @@
 
 /*
 
+Antonious Iskander
+
 In C 
 
 I am doing two types of matrix muliplication.
@@ -21,7 +23,9 @@ int main(){
   char b[k][j];   //second matrix
   char c[i][j];  //result matrix
 
-  timing(0);
+  long int start, end;  //timing variables to compute length of time the program took to run
+
+  start = timing(0);  //start timing
 
   //computation
   for(){
@@ -41,11 +45,13 @@ int main(){
 //    free();
 //  sparseMtrxMult();
 
-  timing(1);
+
+
+  end = timing(1);   //end timing
 
   printf("c(%d,%d):%c ", i,j,c[i][j]);  //display results
 
-  printf("timing:");
+  printf("time it took %ld s\n", end - start);  //displaying length of time the program took to run
 
 
   return 0;
