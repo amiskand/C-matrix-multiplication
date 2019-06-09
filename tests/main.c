@@ -15,43 +15,52 @@ The second is sparse matrices.
 int main(){
 
   //initializations
-  unsigned char i = 2; //row index for matrix a and c
-  unsigned char k = 3; //another index for matrix a and b
-  unsigned char j = 4; //column index for matrix b and c
+  char m = 2; //row size for matrix a and c
+  char n = 3; //another size for matrix a and b
+  char p = 4; //column size for matrix b and c
 
-  char a[i][k];   //first matrix 
-  char b[k][j];   //second matrix
-  char c[i][j];  //result matrix
+  int a[m][n];   //first matrix 
+  int b[n][p];   //second matrix
+  int c[m][p];  //result matrix
 
-  long int start, end;  //timing variables to compute length of time
+  //loop variables i,k,j
+  unsigned char i = 0;  //row index for matrix a and c
+  unsigned char k = 0;  //another index for matrix a and b
+  unsigned char j = 0;  //column index for matrix b and c
+
+  
+  long int start, end;  //timing variables used for computations
+
+//  srand(time(0));
 
   start = timing(0);  //start timing
 
   //computation
-  for(){
+//  for(){
 
     
-    a[i][k] = rand();
+    a[i][k] = (rand()%255);
 
-    printf("a(%d,%d):%c ", i,k,a[i][k]);  //display first matrix
+//printf(" %d  \n", a[i][k]);
 
-    b[k][j] = rand();
+    printf("a(%d,%d):%d ", i,k,a[i][k]);  //display first matrix
 
-    printf("b(%d,%d):%c ", k,j,c[k][j]);  //display second matrix
+    b[k][j] = (rand()%255);
+
+//printf(" %d  \n", b[k][j]);
+
+    printf("b(%d,%d):%d ", k,j,b[k][j]);  //display second matrix
 
 
 //multiply then add the result to the previous result     
-    c[i][j];
+    c[i][j] = a[i][k] * b[k][j];
 
-    printf("c(%d,%d):%c ", i,j,c[i][j]);  //display results
-
-  }
+//printf(" %d  \n", c[i][j]);
 
 
+    printf("c(%d,%d):%d ", i,j,c[i][j]);  //display results
 
-//  c[i][k] =  mtrxMult(a,b,i,k,j);
-//    free();
-//  sparseMtrxMult();
+//  }
 
 
 
