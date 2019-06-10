@@ -1,6 +1,6 @@
 #include "header.h"
 
-long int timing(bool var){
+char timing(bool var){
 
   time_t start, end;
   clock_t stc, endc, cstc, cendc;
