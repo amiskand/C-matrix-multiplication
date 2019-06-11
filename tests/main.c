@@ -34,6 +34,7 @@ int main(){
   unsigned char k = 0;  //another index for matrix a and b
   unsigned char j = 0;  //column index for matrix b and c
 
+//  c[0][0]=0; //makes sure first summation is always 0
   
   char start, end;  //timing variables used for computations
 
@@ -42,37 +43,57 @@ int main(){
   start = timing(0);  //start timing
 
   //computation
-//  for(){
+
+  for(i=0;i<m;i++){
+    for(j=0;j<p;j++){
+      for(k=0;k<n;k++){
 
     
-    a[i][k] = (rand()%127);
+        a[i][k] = (rand()%127);
 
 //printf(" %d  \n", a[i][k]);
 
-    printf("a(%d,%d):%d ", i,k,a[i][k]);  //display first matrix
+        printf("a(%d,%d):%d ", i,k,a[i][k]);  //display first matrix
 
-    b[k][j] = (rand()%127);
+//        printf("a:%d", a[i][k]);
+
+        b[k][j] = (rand()%127);
 
 //printf(" %d  \n", b[k][j]);
 
-    printf("b(%d,%d):%d ", k,j,b[k][j]);  //display second matrix
+        printf("b(%d,%d):%d ", k,j,b[k][j]);  //display second matrix
 
+//        printf("b:%d" , b[k][j]);
 
 //multiply then add the result to the previous result     
-    c[i][j] = a[i][k] * b[k][j];
+         c[i][j] += a[i][k] * b[k][j];
 
 //printf(" %d  \n", c[i][j]);
 
 
-    printf("c(%d,%d):%d ", i,j,c[i][j]);  //display results
+        printf("c(%d,%d):%d      \n", i,j,c[i][j]);  //display results
+//        printf("c:%d   ", c[i][j]);
 
-//  }
+      }
+
+
+//should c be added here?
+
+
+//        printf("c:%d   ", c[i][j]);
+//    printf("\n");
+
+    }
+
+//  printf("\n");
+
+  }
 
 
 
   end = timing(1);   //end timing
 
-  printf("time it took %ld s\n", end - start);  //displaying length of time the program took to run
+  printf("time it took %d s\n", end - start);  //displaying length of time the program took to run
 
 
   return 0;
