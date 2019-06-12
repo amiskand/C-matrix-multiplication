@@ -10,7 +10,7 @@ I am doing two types of matrix muliplication.
 The first one is regular matrix multiplication.
 The second is sparse matrices.
 
-I want to reduce memory footprint as much as possible and reduce cpu usage as much as possible.
+ I want to reduce memory footprint cpu usage as much as possible.
 
 
 */
@@ -37,11 +37,10 @@ int main(){
   
   char start, end;  //timing variables used for computations
 
-  //clear all data in matrices a and b
+  //clear all data in memory locations of matrices a, b and c
   for(k=0; k<n; k++){
 
     for(i=0; i<m; i++){
-
       a[i][k] = 0;
 
     }
@@ -49,6 +48,18 @@ int main(){
     for(j=0;j<p;j++){ 
 
       b[k][j]=0;
+
+      c[i][j]=0;
+
+    }
+
+  }
+
+  for(i=0; i<m; i++){
+
+    for(j=0;j<p;j++){ 
+
+      c[i][j]=0;
 
     }
 
@@ -59,30 +70,51 @@ int main(){
   for(k=0; k<n; k++){
 
     for(i=0; i<m; i++){
- 
+
       a[i][k] = rand()%127;
 
       printf("a(%d,%d):%d \n", i,k,a[i][k]);  //display first matrix
  
     }
 
+    printf("\n");
+
     for(j=0;j<p;j++){ 
 
       b[k][j] = rand()%127;
 
-      printf("b(%d,%d):%d \n", k,j,b[k][j]);  //display second matrix
+      printf("b(%d,%d):%d ", k,j,b[k][j]);  //display second matrix
 
     }
 
+    printf("\n\n");
   }
 
   start = timing(0);  //start timing
 
   //compute
 
+  for(i=0; i<m; i++){
+
+    for(j=0;j<p;j++){ 
+
+      for(k=0; k<n; k++){
+
+	c[i][j]+=a[i][k]*b[k][j];	
+
+      }
+
+      printf("c(%d,%d):%d ",i,j,c[i][j]);      
+
+    }
+
+    printf("\n");
+
+  }
+
   end = timing(1);   //end timing
 
-  printf("time it took %d s\n", end - start);  //displaying length of time the program took to run
+  printf("\ntime it took %d s\n", end - start);  //displaying length of time the program took to run
   
 
   return 0;
