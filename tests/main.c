@@ -19,14 +19,14 @@ int main(){
 
   //initializations
   //I used char data type because I didn't want to use a size bigger than 128
-  char m = 2; //row size for matrix a and c
-  char n = 3; //another size for matrix a and b
-  char p = 4; //column size for matrix b and c
+  char m = 127; //row size for matrix a and c
+  char n = 127; //another size for matrix a and b
+  char p = 127; //column size for matrix b and c
 
 
   char a[m][n];   //first matrix 
   char b[n][p];   //second matrix
-  short c[m][p];  //result matrix
+  int c[m][p];  //result matrix
 
 
   //loop variables i,k,j
@@ -36,6 +36,8 @@ int main(){
   unsigned char j = 0;  //column index for matrix b and c
   
   char start, end;  //timing variables used for computations
+
+  bool flag = 0;
 
   //clear all data in memory locations of matrices a, b and c
   for(k=0; k<n; k++){
@@ -73,8 +75,8 @@ int main(){
 
       a[i][k] = rand()%127;
 
-      printf("a(%d,%d):%d \n", i,k,a[i][k]);  //display first matrix
- 
+      printf("a(%d,%d):%d ", i,k,a[i][k]);  //display first matrix
+    printf("\n"); 
     }
 
     printf("\n");

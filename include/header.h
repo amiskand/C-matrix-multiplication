@@ -9,6 +9,9 @@
 
 
 char timing(bool var);
+
+//bool zeroMatrix(char a[][k]);
+
 //char[][] sparseMtrxMult();
 //char* mtrxMult(char a,char b, char i, char k, char j);
 

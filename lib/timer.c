@@ -3,21 +3,21 @@
 char timing(bool var){
 
   time_t start, end;
-  clock_t stc, endc, cstc, cendc;
+//  clock_t stc, endc, cstc, cendc;
 
   switch(var){
 
   case 0:
     start = time(NULL);
-    stc = time(NULL);
-    cstc = clock();
+//    stc = time(NULL);
+//    cstc = clock();
     return start;   
 //    break;
 
   case 1:
     time(&end);
-    time(&endc);
-    cendc = clock();   
+//    time(&endc);
+//    cendc = clock();   
     return end; 
 //    break;
 
