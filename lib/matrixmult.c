@@ -6,43 +6,44 @@
 
 #include "header.h"
 
-char* mtrxMult(char a, char b, char i, char k, char j){
+bool mtrxMult(char a[][N], char b[][P], int c[][P], unsigned char i, unsigned char j, unsigned char k){
 
-  //initializations
-//  char i = 2; //row index for matrix a and c
-//  char k = 3; //another index for matrix a and b
-//  char j = 4; //column index for matrix b and c
-  char x = 0; //element for matrix a
-  char y = 0; //element for matrix b
-  srand(time(NULL));
+  bool f = 1;  
 
- 
-//  char a[i][k];   //first matrix 
-//  char b[k][j];   //second matrix
-  char c[i][j];   //result matrix
-
-
-//would it be faster if I first populated the matrix then compute?
-//or do i reuse x for both matrices? 
-//or do i save rand() directly into matrix without variables?
-
-//  malloc();
+  FILE *fp;
+  fp=fopen("fileC.txt","w");
+//  fprintf(fp,"c1=[");
 
   //computation
-  for(){
 
-    x = rand();
-    a[i][k] = x;
-    x = rand();
-    b[k][j] = x;
+  for(i=0; i<M; i++){
 
-//multiply then add the result to the previous result     
-    c[i][j]
+    for(j=0;j<P;j++){ 
+
+      for(k=0; k<N; k++){
+
+	c[i][j]+=a[i][k]*b[k][j];	
+
+      }
+
+      printf("c(%d,%d):%d ",i,j,c[i][j]);      
+
+      fprintf(fp,"%d ",c[i][j]);
+
+    }
+
+    printf("\n");
+
+    fprintf(fp,"\n");
 
   }
 
+//  fprintf(fp,"]");  
 
-//  printf("%c ", c[i][j]);  //display results
-  
+  printf("\n");
+
+  fclose(fp);
+
+  return f;
 
 }
