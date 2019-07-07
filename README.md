@@ -1,7 +1,7 @@
 # smnvm
 This is a repository for sparse matrix and matrix mutliplications in C.
 
-# changes
+# notchanges
 * In this version of matrix multiplication the matrix is self-populating in the program. 
 * It can handle up to a 127 x 127 matrix.
 * It prints to a console and files.
