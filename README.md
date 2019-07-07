@@ -1,4 +1,4 @@
-# smnvm
+# Cmm
 This is a repository for matrix mutliplications in C.
 
 # changes
