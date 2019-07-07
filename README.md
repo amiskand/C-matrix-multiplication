@@ -1,4 +1,4 @@
-# Cmm
+# C-matrix-multiplication 
 This is a repository for matrix mutliplications in C.
 
 # changes
