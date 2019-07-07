@@ -1,5 +1,5 @@
 # smnvm
-This is a repository for sparse matrix and matrix mutliplications in C.
+This is a repository for matrix mutliplications in C.
 
 # changes
 * In this version of matrix multiplication the matrix is self-populating in the program. 
