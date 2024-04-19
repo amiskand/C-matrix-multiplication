@@ -46,4 +46,5 @@ bool mtrxMult(char a[][N], char b[][P], int c[][P], unsigned char i, unsigned ch
 
   return f;
 
+
 }
